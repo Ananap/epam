@@ -16,15 +16,13 @@ public class FileFormatter {
         this.valid = new ValidateFile();
     }
 
-    public ArrayList<String> readFile (String filename) throws IOException, ArrayException {
+    public ArrayList<String> readFile (String filename) throws ArrayException {
         if (filename == null) {
             logger.error("Array is null");
             throw new ArrayException("Array is null");
         } else {
-            FileReader reader = null;
             ArrayList<String> validParameters = new ArrayList<>();
-            try {
-                reader = new FileReader(filename);
+            try (FileReader reader = new FileReader(filename)) {
                 validParameters = new ArrayList<>();
                 Scanner sc = new Scanner(reader);
 
@@ -35,8 +33,6 @@ public class FileFormatter {
                 }
             } catch (IOException ex) {
                 logger.error("This is error: " + ex.getLocalizedMessage());
-            } finally {
-                reader.close();
             }
             return validParameters;
         }
