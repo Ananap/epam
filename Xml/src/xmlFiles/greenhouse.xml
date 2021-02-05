@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flowers>
-    <flower id="1">
-        <name>Cactus</name>
-        <soil>Sod Podzolic</soil>
-        <datePlanted>1.02.2021</datePlanted>
-        <origin>South Africa</origin>
-        <visualParameters>
-            <stalkColor>brown</stalkColor>
-            <leavesColor>none</leavesColor>
-            <averageSize>0.5</averageSize>
-        </visualParameters>
-        <growingTips>
-            <temperature>35</temperature>
-            <watering>500</watering>
-            <lightLoving>false</lightLoving>
+<greenhouse>
+    <plants>
+        <plant id="1">
+            <name>Cactus</name>
+            <soil>sod-podzolic</soil>
+            <origin>South Africa</origin>
+            <visualParams>
+                <stalkColor>brown</stalkColor>
+                <leafColor>none</leafColor>
+                <averageSize>0.5</averageSize>
+            </visualParams>
+            <growingTips>
+                <temparature>35</temparature>
+                <lighting>false</lighting>
+                <watering>500</watering>
+            </growingTips>
             <multiplying>stalk</multiplying>
-        </growingTips>
-    </flower>
-    <flower id="2">
-        <name>Orchid</name>
-        <soil>Unpaved</soil>
-        <datePlanted>2.02.2021</datePlanted>
-        <origin>Asia</origin>
-        <visualParameters>
-            <stalkColor>brown</stalkColor>
-            <leavesColor>green</leavesColor>
-            <averageSize>1.0</averageSize>
-        </visualParameters>
-        <growingTips>
-            <temperature>20</temperature>
-            <watering>800</watering>
-            <lightLoving>true</lightLoving>
+            <datePlanted>2020-05-30T15:15:00</datePlanted>
+        </plant>
+        <plant id="2">
+            <name>Orchid</name>
+            <soil>subterranean</soil>
+            <origin>Asia</origin>
+            <visualParams>
+                <stalkColor>brown</stalkColor>
+                <leafColor>green</leafColor>
+                <averageSize>1.0</averageSize>
+            </visualParams>
+            <growingTips>
+                <temparature>20</temparature>
+                <lighting>true</lighting>
+                <watering>800</watering>
+            </growingTips>
             <multiplying>seed</multiplying>
-        </growingTips>
-    </flower>
-    <flower id="3">
-        <name>Rose</name>
-        <soil>Podzolic</soil>
-        <datePlanted>3.02.2021</datePlanted>
-        <origin>China</origin>
-        <visualParameters>
-            <stalkColor>green</stalkColor>
-            <leavesColor>red</leavesColor>
-            <averageSize>1.2</averageSize>
-        </visualParameters>
-        <growingTips>
-            <temperature>18</temperature>
-            <watering>1000</watering>
-            <lightLoving>true</lightLoving>
+            <datePlanted>2021-02-15T20:11:00</datePlanted>
+        </plant>
+        <plant id="3">
+            <name>Rose</name>
+            <soil>podzolic</soil>
+            <origin>China</origin>
+            <visualParams>
+                <stalkColor>green</stalkColor>
+                <leafColor>red</leafColor>
+                <averageSize>1.2</averageSize>
+            </visualParams>
+            <growingTips>
+                <temparature>18</temparature>
+                <lighting>true</lighting>
+                <watering>1000</watering>
+            </growingTips>
             <multiplying>seed</multiplying>
-        </growingTips>
-    </flower>
-</flowers>
+            <datePlanted>2021-01-30T23:43:00</datePlanted>
+        </plant>
+    </plants>
+</greenhouse>

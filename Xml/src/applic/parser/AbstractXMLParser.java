@@ -1,7 +1,8 @@
 package applic.parser;
 
 import applic.exception.InvalidDocumentException;
-import applic.xmlflowers.Flowers;
+import applic.xmlflowers.GreenHouse;
+import jdk.nashorn.internal.runtime.ParserException;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -17,15 +18,20 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static applic.utils.ProjectUtils.checkNotNull;
 
 public abstract class AbstractXMLParser implements XMLParser {
-    protected Flowers flowers;
+    protected GreenHouse greenHouse;
+    protected abstract GreenHouse parseFile(InputStream xmlis) throws Exception;
 
     @Override
-    public Flowers parse(String xmlFile, String xsdFile) throws Exception {
+    public GreenHouse parse(String xmlFile, String xsdFile) throws Exception {
         checkNotNull(xmlFile);
+
         if (xsdFile != null) {
             boolean xmlValidated = validate(new FileInputStream(xmlFile), new FileInputStream(xsdFile)); //Validation
             if(!xmlValidated)
@@ -34,8 +40,6 @@ public abstract class AbstractXMLParser implements XMLParser {
 
         return parseFile(new FileInputStream(xmlFile));
     }
-
-    protected abstract Flowers parseFile(InputStream xmlis) throws Exception;
 
     protected void writeDocument(Document document, String xmlOutFile)
             throws TransformerException, TransformerFactoryConfigurationError, FileNotFoundException, TransformerConfigurationException {
@@ -63,3 +67,4 @@ public abstract class AbstractXMLParser implements XMLParser {
         return true;
     }
 }
+

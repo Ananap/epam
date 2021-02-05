@@ -5,8 +5,8 @@ public abstract class XMLParserFactory {
 
     public enum XMLParserType {
         DOM("applic.parser.dom.DomParserFactory"),
-        SAX("applic.parser.sax.SAXParserFactory"),
-        STAX("applic.parser.stax.StAXParserFactory");
+        SAX("applic.parser.sax.SaxParserFactory"),
+        STAX("applic.parser.stax.StaxParserFactory");
 
         private final String clazz;
 

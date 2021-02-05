@@ -1,23 +1,33 @@
 package applic.xmlflowers;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+
+})
 public class GrowingTips {
-    @XmlElement
-    private double temperature;
-    @XmlElement(required = true)
-    private int watering;
-    @XmlElement(required = true)
-    private boolean lightLoving;
-    @XmlElement
-    private Multiplying multiplying;
 
-    public double getTemperature() {
-        return temperature;
+    private byte temparature;
+    private boolean lighting;
+    private int watering;
+
+    public byte getTemparature() {
+        return temparature;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public void setTemparature(byte temparature) {
+        this.temparature = temparature;
+    }
+
+    public boolean isLighting() {
+        return lighting;
+    }
+
+    public void setLighting(boolean lighting) {
+        this.lighting = lighting;
     }
 
     public int getWatering() {
@@ -28,19 +38,13 @@ public class GrowingTips {
         this.watering = watering;
     }
 
-    public boolean isLightLoving() {
-        return lightLoving;
-    }
-
-    public void setLightLoving(boolean lightLoving) {
-        this.lightLoving = lightLoving;
-    }
-
-    public Multiplying getMultiplying() {
-        return multiplying;
-    }
-
-    public void setMultiplying(Multiplying multiplying) {
-        this.multiplying = multiplying;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("GrowingTips{");
+        sb.append("temparature=").append(temparature);
+        sb.append(", lighting=").append(lighting);
+        sb.append(", watering=").append(watering);
+        sb.append('}');
+        return sb.toString();
     }
 }
