@@ -1,0 +1,18 @@
+package by.panasenko.handling.parser;
+
+import by.panasenko.handling.composite.ComponentType;
+import by.panasenko.handling.composite.TextComposite;
+
+public class SentenceParser extends AbstractParser {
+	private static final String SENTENCE_REGEX = "(?<=([!?.{1,3}]))";
+	private AbstractParser nextParser = new LexemeParser();
+	@Override
+	public void parse(String paragraph, TextComposite textComposite) {
+		String[] sentences = paragraph.split(SENTENCE_REGEX);
+		for(String sentence: sentences) {
+			TextComposite sentenceComposite = new TextComposite(ComponentType.SENTENCE);
+			textComposite.add(sentenceComposite);
+			nextParser.parse(sentence,sentenceComposite);
+		}
+	}
+}
