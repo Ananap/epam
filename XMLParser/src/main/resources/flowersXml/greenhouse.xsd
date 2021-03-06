@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<schema elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="greenhouse">
+    <complexType>
+      <sequence>
+        <element name="plants">
+          <complexType>
+            <sequence>
+              <element name="plant" maxOccurs="unbounded" minOccurs="2">
+                <complexType>
+                  <sequence>
+                    <element type="string" name="name"/>
+                    <element name="soil">
+                      <simpleType>
+                        <restriction base="string">
+                          <enumeration value="podzolic"/>
+                          <enumeration value="subterranean"/>
+                          <enumeration value="sod-podzolic"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                    <element type="string" name="origin"/>
+                    <element name="visualParams">
+                      <complexType>
+                        <sequence>
+                          <element type="string" name="stalkColor"/>
+                          <element type="string" name="leafColor"/>
+                          <element type="float" name="averageSize"/>
+                        </sequence>
+                      </complexType>
+                    </element>
+                    <element name="growingTips">
+                      <complexType>
+                        <all>
+                          <element name="temparature">
+                            <simpleType>
+                              <restriction base="byte">
+                                <minInclusive value="0"/>
+                                <maxInclusive value="100"/>
+                              </restriction>
+                            </simpleType>
+                          </element>
+                          <element type="boolean" name="lighting"/>
+                          <element type="int" name="watering"/>
+                        </all>
+                      </complexType>
+                    </element>
+                    <element name="multiplying">
+                      <simpleType>
+                        <restriction base="string">
+                          <enumeration value="leaf"/>
+                          <enumeration value="stalk"/>
+                          <enumeration value="seed"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                    <element type="dateTime" name="datePlanted"/>
+                  </sequence>
+                  <attribute type="int" name="id" use="required"/>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>
