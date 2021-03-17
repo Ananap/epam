@@ -1,0 +1,11 @@
+{
+  "shipConfigurationList":
+  [
+  {"count":3,"capacity":300,"shipType":"LIGHT"},
+  {"count":2,"capacity":500,"shipType":"HEAVY"}
+  ],
+  "pierConfigurationList":[
+    {"count":2,"capacity":300},
+    {"count":1,"capacity":500}
+  ]
+}
